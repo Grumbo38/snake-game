@@ -2,43 +2,43 @@
 
 void Player::initVariables()
 {
-	this->length = 2;
-	this->moveSpeed = 2;
-	this->direction = {1.f, 0.f};
+	length = 2;
+	moveSpeed = 2;
+	direction = {1.f, 0.f};
 }
 
 void Player::initSnake()
 {
-	this->snake.setFillColor(sf::Color::Green);
-	this->snake.setSize(sf::Vector2f(20.f, 20.f));
-	this->snake.setOutlineThickness(0.f);
-	this->snake.setOutlineColor(sf::Color(0, 128, 128, 255));
-	this->part.setFillColor(sf::Color::Green);
-	this->part.setSize(sf::Vector2f(20.f, 20.f));
-	this->part.setOutlineThickness(0.f);
-	this->part.setOutlineColor(sf::Color(0, 128, 128, 255));
-	this->body.push_back(snake);
-	this->body.push_back(part);
-	this->bodyPartDirection[0] = this->direction;
-	this->bodyPartDirection[1] = this->direction;
+	snake.setFillColor(sf::Color::Green);
+	snake.setSize(sf::Vector2f(20.f, 20.f));
+	snake.setOutlineThickness(0.f);
+	snake.setOutlineColor(sf::Color(0, 128, 128, 255));
+	part.setFillColor(sf::Color::Green);
+	part.setSize(sf::Vector2f(20.f, 20.f));
+	part.setOutlineThickness(0.f);
+	part.setOutlineColor(sf::Color(0, 128, 128, 255));
+	body.push_back(snake);
+	body.push_back(part);
+	bodyPartDirection[0] = direction;
+	bodyPartDirection[1] = direction;
 }
 
 void Player::growPart()
 {
-	this->body.push_back(part);
-	this->body[length - 1].setPosition(body[length - 2].getPosition().x - (20.f * bodyPartDirection[length - 2][0]), body[length - 2].getPosition().y - (20.f * bodyPartDirection[length - 2][1]));
-	this->bodyPartDirection[length - 1] = bodyPartDirection[length - 2];
+	body.push_back(part);
+	body[length - 1].setPosition(body[length - 2].getPosition().x - (20.f * bodyPartDirection[length - 2][0]), body[length - 2].getPosition().y - (20.f * bodyPartDirection[length - 2][1]));
+	bodyPartDirection[length - 1] = bodyPartDirection[length - 2];
 }
 
 Player::Player(float windowWidth, float windowHeight, float uiHeight)
 {
-	this->initVariables();
-	this->initSnake();
+	initVariables();
+	initSnake();
 	float x, y;
 	x = static_cast<float>((rand() % static_cast<int>(windowWidth / 20)/2) * 20);
 	y = uiHeight + static_cast<float>((rand() % static_cast<int>((windowHeight - uiHeight) / 20)) * 20);
-	this->body[0].setPosition(x, y);
-	this->body[1].setPosition(x - 20.f, y);
+	body[0].setPosition(x, y);
+	body[1].setPosition(x - 20.f, y);
 }
 
 Player::~Player()
@@ -48,12 +48,12 @@ Player::~Player()
 
 float Player::positionX()
 {
-	return this->body[0].getPosition().x;
+	return body[0].getPosition().x;
 }
 
 float Player::positionY()
 {
-	return this->body[0].getPosition().y;
+	return body[0].getPosition().y;
 }
 
 const sf::RectangleShape& Player::getShape(int i) const
@@ -185,7 +185,7 @@ void Player::updatePartDirection()
 
 void Player::updateLength()
 {
-	this->length++;
+	length++;
 	growPart();
 }
 
@@ -194,13 +194,13 @@ void Player::playerMove()
 {
 	for (int i = 0; i < body.size(); i++)
 	{
-		bodyMove(i, this->bodyPartDirection[i]);
+		bodyMove(i, bodyPartDirection[i]);
 	}
 }
 
 void Player::bodyMove(int i, std::vector<float> direction)
 {
-	body[i].move(direction[0] * this->moveSpeed, direction[1] * this->moveSpeed);
+	body[i].move(direction[0] * moveSpeed, direction[1] * moveSpeed);
 }
 
 bool Player::touchingWindowBorder(sf::VideoMode videoMode, float uiHeight)
