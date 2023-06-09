@@ -1,0 +1,2 @@
+F:\C++ Shiz\Projects\Snake\x64\Debug\Snake.exe
+F:\C++ Shiz\Projects\Games\Snake\x64\Debug\Snake.exe

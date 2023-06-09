@@ -1,0 +1,21 @@
+﻿  Apple.cpp
+  Game.cpp
+F:\Dev\Projects\Games\Snake\Game.cpp(11,31): warning C4244: '=': conversion from 'float' to 'unsigned int', possible loss of data
+F:\Dev\Projects\Games\Snake\Game.cpp(23,53): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+F:\Dev\Projects\Games\Snake\Game.cpp(23,36): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+F:\Dev\Projects\Games\Snake\Game.cpp(28,52): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+F:\Dev\Projects\Games\Snake\Game.cpp(28,35): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+F:\Dev\Projects\Games\Snake\Game.cpp(33,40): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+  main.cpp
+F:\Dev\Projects\Games\Snake\main.cpp(6,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Player.cpp
+F:\Dev\Projects\Games\Snake\Player.cpp(173,14): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+F:\Dev\Projects\Games\Snake\Player.cpp(253,30): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+F:\Dev\Projects\Games\Snake\Player.cpp(261,52): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+  UserInterface.cpp
+  Generating code
+  746 of 759 functions (98.3%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    2 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  Snake.vcxproj -> F:\Dev\Projects\Games\Snake\x64\Release\Snake.exe
